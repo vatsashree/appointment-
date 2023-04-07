@@ -1,0 +1,290 @@
+<!-- HTML code for blog page -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practo Health Blog</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Practo Health Blog</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+		</nav>
+        <form method="get" action="/search">
+            <label for="specialty">Specialty:</label>
+            <select name="specialty" id="specialty">
+              <option value="">-- Select Specialty --</option>
+              <option value="cardiology">Cardiology</option>
+              <option value="pediatrics">Pediatrics</option>
+              <option value="neurology">Neurology</option>
+              <option value="dermatology">Dermatology</option>
+            </select>
+          
+            <label for="location">Location:</label>
+            <select name="location" id="location">
+              <option value="">-- Select Location --</option>
+              <option value="newyork">New York</option>
+              <option value="losangeles">Los Angeles</option>
+              <option value="chicago">Chicago</option>
+              <option value="sanfrancisco">San Francisco</option>
+            </select>
+          
+            <label for="availability">Availability:</label>
+            <select name="availability" id="availability">
+              <option value="">-- Select Availability --</option>
+              <option value="mon-fri-9-5">Monday - Friday, 9 AM - 5 PM</option>
+              <option value="mon-fri-8-4">Monday - Friday, 8 AM - 4 PM</option>
+              <option value="sat-sun-10-2">Saturday - Sunday, 10 AM - 2 PM</option>
+            </select>
+          
+            <label for="reviews">Reviews:</label>
+            <select name="reviews" id="reviews">
+              <option value="">-- Select Reviews --</option>
+              <option value="excellent">Excellent</option>
+              <option value="good">Good</option>
+              <option value="average">Average</option>
+              <option value="poor">Poor</option>
+            </select>
+          
+            <button type="submit">Search</button>
+          </form>
+          
+	</header>
+	
+	<main>
+        <!-- login form -->
+<form id="login-form" class="login-form" method="POST">
+    <h2>Login</h2>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  
+  <!-- search form (hidden until user is authenticated) -->
+  <form id="search-form" class="search-form" method="GET">
+    <h2>Search for a Doctor</h2>
+    <div class="form-group">
+      <label for="specialty">Specialty:</label>
+      <select id="specialty" name="specialty">
+        <option value="">-- Select a Specialty --</option>
+        <option value="cardiology">Cardiology</option>
+        <option value="dermatology">Dermatology</option>
+        <option value="neurology">Neurology</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location">
+    </div>
+    <div class="form-group">
+      <label for="availability">Availability:</label>
+      <input type="text" id="availability" name="availability">
+    </div>
+    <div class="form-group">
+      <label for="rating">Minimum Rating:</label>
+      <select id="rating" name="rating">
+        <option value="">-- Select a Rating --</option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+      </select>
+    </div>
+    <button type="submit">Search</button>
+  </form>
+  
+		<section>
+			<h2>Latest Posts</h2>
+			<article>
+				<h3>10 Simple Ways to Stay Healthy</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<a href="#">Read More</a>
+			</article>
+			<article>
+				<h3>The Benefits of Yoga</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<a href="#">Read More</a>
+			</article>
+			<article>
+				<h3>Healthy Eating Tips</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<a href="#">Read More</a>
+			</article>
+		</section>
+
+        <!-- doctor profile page -->
+<div class="doctor-profile">
+    <h1>Dr. John Doe</h1>
+    <p>Specialty: Cardiology</p>
+    <p>Location: New York</p>
+    
+    <!-- rating and review form -->
+    <form id="rating-form" class="rating-form" method="POST">
+      <div class="form-group">
+        <label for="rating">Rate your experience:</label>
+        <select id="rating" name="rating" required>
+          <option value="">-- Select a Rating --</option>
+          <option value="1">1 Star</option>
+          <option value="2">2 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="5">5 Stars</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="review">Write a review:</label>
+        <textarea id="review" name="review"></textarea>
+      </div>
+      <button type="submit">Submit Review</button>
+    </form>
+  
+    <!-- reviews section -->
+    <div class="reviews">
+      <h2>Reviews</h2>
+      <ul class="review-list">
+        <li>
+          <h3>John Smith</h3>
+          <p>Rating: 4 Stars</p>
+          <p>Review: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </li>
+        <li>
+          <h3>Jane Doe</h3>
+          <p>Rating: 5 Stars</p>
+          <p>Review: Nullam vestibulum augue et justo feugiat, sed bibendum felis hendrerit.</p>
+        </li>
+        <!-- more reviews... -->
+      </ul>
+    </div>
+  </div>
+  
+		
+		<aside>
+			<h2>Categories</h2>
+			<ul>
+				<li><a href="#">Healthy Living</a></li>
+				<li><a href="#">Mental Health</a></li>
+				<li><a href="#">Fitness</a></li>
+				<li><a href="#">Nutrition</a></li>
+			</ul>
+		</aside>
+	</main>
+
+    <div>
+        <h2>Select a doctor</h2>
+        <select id="doctor">
+          <option value="john_doe">John Doe (Dermatology)</option>
+          <option value="jane_smith">Jane Smith (Cardiology)</option>
+        </select>
+      </div>
+      
+      <div>
+        <h2>Select a preferred time</h2>
+        <select id="time">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+        </select>
+      </div>
+      
+      <div>
+        <h2>Select a consultation method</h2>
+        <input type="radio" id="video" name="method" value="video">
+        <label for="video">Video</label><br>
+        <input type="radio" id="chat" name="method" value="chat">
+        <label for="chat">Chat</label><br>
+      </div>
+      
+      <button id="schedule">Schedule Appointment</button>
+      <div id="message"></div>
+      
+	
+    <div class="appointment-form">
+        <h2>Book an Appointment</h2>
+        <form>
+          <label for="doctor">Select Doctor:</label>
+          <select id="doctor" name="doctor">
+            <option value="Dr. John Doe">Dr. John Doe</option>
+            <option value="Dr. Jane Smith">Dr. Jane Smith</option>
+            <option value="Dr. Michael Lee">Dr. Michael Lee</option>
+          </select>
+      
+          <label for="date">Select Date:</label>
+          <input type="date" id="date" name="date" required>
+      
+          <label for="time">Select Time:</label>
+          <input type="time" id="time" name="time" required>
+      
+          <label for="notes">Notes:</label>
+          <textarea id="notes" name="notes"></textarea>
+      
+          <button type="submit">Book Appointment</button>
+        </form>
+      </div>
+
+      <form action="submit-test.php" method="post">
+        <label for="test-type">Test Type:</label>
+        <select name="test-type" id="test-type">
+          <option value="blood-test">Blood Test</option>
+          <option value="urine-test">Urine Test</option>
+          <option value="x-ray">X-Ray</option>
+          <option value="ultrasound">Ultrasound</option>
+        </select>
+        <br>
+        <label for="lab-location">Lab Location:</label>
+        <input type="text" id="lab-location" name="lab-location">
+        <br>
+        <label for="preferred-date">Preferred Date:</label>
+        <input type="date" id="preferred-date" name="preferred-date">
+        <br>
+        <label for="preferred-time">Preferred Time:</label>
+        <input type="time" id="preferred-time" name="preferred-time">
+        <br>
+        <input type="submit" value="Book Test">
+      </form>
+      
+
+      <div class="chat-container">
+        <div class="chat-header">
+          <h3>Chat</h3>
+        </div>
+        <div class="chat-messages">
+          <!-- messages will be added here dynamically with JavaScript -->
+        </div>
+        <div class="chat-form">
+          <form>
+            <input type="text" placeholder="Type your message">
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <h1>List of doctors</h1>
+	<ul>
+		<?php while ($row = mysqli_fetch_assoc($result)) { ?>
+			<li><?php echo $row['name']; ?></li>
+		<?php } ?>
+	</ul>
+      <script src="script.js"> </script>
+      <script src="node.js"> </script>
+	<footer>
+		<p>&copy; 2023 Practo Health Blog</p>
+	</footer>
+</body>
+</html>
+
